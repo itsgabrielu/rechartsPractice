@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import Button from './button.js';
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+
 const data = [
       {name: 'Page A', uv: [2000, 4000], pv: 2400, amt: 2400},
       {name: 'Page B', uv: [3000, 1000], pv: 1398, amt: 2210},
@@ -15,16 +16,19 @@ const data = [
 class SimpleBarChart extends Component {
 	render () {
   	return (
-    	<BarChart width={600} height={300} layout='vertical' data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-       <XAxis type='number'/>
-       <YAxis type='category' dataKey="name"/>
-       <CartesianGrid strokeDasharray="3 3"/>
-       <Tooltip/>
-       <Legend />
-       <Bar dataKey="pv" fill="#8884d8" />
-       <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
+      <div>
+        <BarChart width={600} height={300} layout='vertical' data={data}
+              margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+         <XAxis type='number'/>
+         <YAxis type='category' dataKey="name"/>
+         <CartesianGrid strokeDasharray="3 3"/>
+         <Tooltip/>
+         <Legend />
+         <Bar dataKey="pv" fill="#8884d8" />
+         <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+        <Button/>
+      </div>
     );
   }
 }
